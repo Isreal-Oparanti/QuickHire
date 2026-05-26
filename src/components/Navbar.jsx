@@ -1,22 +1,25 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
-
-
-function Navbar() {
+function Navbar({ currentUser, onLogout }) {
   return (
-    <nav className='bg-gray-100 p-5 border-b-1 border-gray-200'>
-      <div className='flex justify-between'>
-        <div className='text-green-800 font-bold text-xl'>QuickHire</div>
-        <div>
-          <ul className='flex gap-5 mr-7 m-auto'>
-            <li className='hover:text-green-500'><a href="#">Home</a></li>
-            <li className='hover:text-green-500'><a href="#">About</a></li>
-            <li className='hover:text-green-500'><a href="#">Contact</a></li>
-          </ul>
+    <nav className="navbar">
+      <Link to={currentUser ? '/dashboard' : '/login'} className="logo">
+        QuickHire
+      </Link>
+
+      {currentUser ? (
+        <div className="nav-actions">
+          <span>{currentUser.email}</span>
+          <button onClick={onLogout}>Logout</button>
         </div>
-      </div>
+      ) : (
+        <div className="nav-links">
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Create account</Link>
+        </div>
+      )}
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

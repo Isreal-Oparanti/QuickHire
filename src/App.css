@@ -1,7 +1,263 @@
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 52%, #fff7ed 100%);
+  color: #162033;
+}
 
-.hero {
-  font-size: 100px;
-  color: #35b45b;
-  margin-bottom: 20px;
-  border: 1px solid #35b45b;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 6vw;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.12);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.logo {
+  color: #0f766e;
+  font-size: 1.45rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.nav-links,
+.nav-actions,
+.landing-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.nav-links a,
+.landing-actions a,
+.switch-text a {
+  color: #0f766e;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.nav-links a:last-child,
+.landing-actions a:first-child,
+.nav-actions button,
+.primary-button {
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  background: #0f766e;
+  color: white;
+}
+
+.nav-actions span {
+  color: #64748b;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.landing-page,
+.single-auth-page {
+  display: grid;
+  place-items: center;
+  width: min(1100px, 90vw);
+  min-height: calc(100vh - 78px);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.landing-content {
+  max-width: 680px;
+  text-align: center;
+}
+
+.tag {
+  margin: 0 0 0.8rem;
+  color: #0f766e;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.landing-content h1,
+.dashboard-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.landing-content p,
+.dashboard-header p {
+  color: #475569;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.landing-actions {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.auth-card {
+  width: min(420px, 100%);
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.09);
+}
+
+.auth-card h2 {
+  margin: 0 0 1.25rem;
+  color: #111827;
+  font-size: 1.8rem;
+}
+
+.auth-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: #334155;
+  font-weight: 800;
+}
+
+.auth-form input,
+.search-section input {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.95rem 1rem;
+  background: white;
+  color: #111827;
+  outline: none;
+}
+
+.auth-form input:focus,
+.search-section input:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.14);
+}
+
+.primary-button {
+  font-weight: 900;
+}
+
+.error-message,
+.empty-message {
+  margin: 0;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 800;
+}
+
+.switch-text {
+  margin: 1.2rem 0 0;
+  color: #64748b;
+  text-align: center;
+}
+
+.dashboard-page {
+  width: min(1120px, 90vw);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.dashboard-header {
+  margin-bottom: 1.5rem;
+}
+
+.search-section {
+  margin-bottom: 1.5rem;
+}
+
+.jobs-section {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.job-card {
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  border-radius: 8px;
+  padding: 1.2rem;
+  background: white;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.07);
+}
+
+.job-logo {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+  background: #ccfbf1;
+  color: #0f766e;
+  font-weight: 900;
+}
+
+.job-meta,
+.job-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.job-meta {
+  margin-top: 1rem;
+}
+
+.job-card h2 {
+  margin: 0.7rem 0 0.25rem;
+  color: #111827;
+  font-size: 1.25rem;
+}
+
+.company-name {
+  color: #0f766e;
+  font-weight: 800;
+}
+
+.job-card p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.job-footer {
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.job-footer strong {
+  color: #0f766e;
+}
+
+@media (max-width: 820px) {
+  .navbar,
+  .nav-links,
+  .nav-actions,
+  .landing-actions,
+  .jobs-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .landing-content {
+    text-align: left;
+  }
 }
