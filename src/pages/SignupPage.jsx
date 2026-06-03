@@ -32,10 +32,11 @@ function SignupPage({ onSignup }) {
           'Content-type': 'application/json; charset=UTF-8',
         },
       });
+
       const newUser = await response.json();
 
-      onSignup({ name: newUser.name, email: newUser.email });
-      navigate('/dashboard');
+      // onSignup({ name: newUser.name, email: newUser.email });
+      navigate('/login');
     } catch (error) {
       setError('Account could not be created. Please try again.');
     } finally {
